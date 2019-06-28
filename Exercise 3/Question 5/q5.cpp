@@ -3,11 +3,12 @@
 * Description: The code is used to track the laser beam and mark the center with a crosshair.
 * Author: Amreeta Sengupta
 * Date: 06/28/2019
-* References: docs.opencv.org
-* 			  http://ecee.colorado.edu/~siewerts/extra/ecen5763/ecen5763_code/simpler-capture/
-*             https://www.learnopencv.com/read-write-and-display-a-video-using-opencv-cpp-python/
-* 			  https://docs.opencv.org/3.3.0/da/d0c/tutorial_bounding_rects_circles.html
-* 			  https://docs.opencv.org/3.0-beta/doc/tutorials/imgproc/shapedescriptors/moments/moments.html
+* References: 
+* docs.opencv.org
+* -> http://ecee.colorado.edu/~siewerts/extra/ecen5763/ecen5763_code/simpler-capture/
+* -> https://www.learnopencv.com/read-write-and-display-a-video-using-opencv-cpp-python/
+* -> https://docs.opencv.org/3.3.0/da/d0c/tutorial_bounding_rects_circles.html
+* -> https://docs.opencv.org/3.0-beta/doc/tutorials/imgproc/shapedescriptors/moments/moments.html
 **************************************************************************************************************/
 
 #include <unistd.h>
@@ -25,7 +26,7 @@ int thresh = 245;
 int max_thresh = 255;
 Mat present_frame, result_frame, new_result, drawing;
 int marker_type = MARKER_CROSS;
-int marker_size = 25;
+int marker_size = 75;
 int marker_thickness = 1;
 int marker_line_type = 8;
 
@@ -72,24 +73,25 @@ int main( int argc, char** argv )
 	  {
 		  
 	    cap >> present_frame;
-	  
+	    
 	    // If the frame is empty, break immediately
 	    if  (present_frame.empty())
 	    break;
-	 
-		extractChannel(present_frame,result_frame,1); //extract G band
-		
+	    
+	    extractChannel(present_frame,result_frame,1); //extract G band
+	    
 		threshold(result_frame, new_result, thresh, max_thresh, THRESH_BINARY);
 	    thresh_func();
 	    
-		//Display the resulting frame
+	    //Display the resulting frame
 	    imshow( "Result Frame", drawing);
+	    
 	    sprintf(buff, "Frame_%d.pgm", frame_num++);
 		imwrite(buff,drawing);
-	
-		  // Press  ESC on keyboard to exit
-		 char c = cvWaitKey(33);
-	     if( c == 27 ) break;
+		
+	    // Press  ESC on keyboard to exit
+		char c = cvWaitKey(33);
+	    if( c == 27 ) break;
         
 		 }
 	     
