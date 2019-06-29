@@ -1,10 +1,11 @@
+
 /*************************************************************************************************************
 * File Name: q6.cpp
 * Description: The code is used to track the laser beam and mark the center with a crosshair.
 * Author: Amreeta Sengupta
 * Date: 06/28/2019
 * References: 
-* docs.opencv.org
+* -> docs.opencv.org
 * -> http://ecee.colorado.edu/~siewerts/extra/ecen5763/ecen5763_code/simpler-capture/
 * -> https://www.learnopencv.com/read-write-and-display-a-video-using-opencv-cpp-python/
 * -> https://docs.opencv.org/3.3.0/da/d0c/tutorial_bounding_rects_circles.html
@@ -56,7 +57,8 @@ void thresh_func()
 		max_index = i;
 	}
   }
-  drawing = Mat::zeros( new_result.size(), CV_8UC3 );
+   drawing = Mat::zeros( new_result.size(), CV_8UC3 );
+   present_frame.copyTo(drawing);
   for( size_t i = 0; i< contours.size(); i++ )
   {
     drawContours( drawing, contours_poly, (int)max_index, Scalar(0,255,0), 1, 8, vector<Vec4i>(), 0, Point() ); 
