@@ -50,6 +50,7 @@ void thresh_func()
 	p[i]=Point2f(m[i].m10/m[i].m00, m[i].m01/m[i].m00); // center of the contour
   }
   drawing = Mat::zeros( new_result.size(), CV_8UC3 );
+  present_frame.copyTo(drawing);
   for( size_t i = 0; i< contours.size(); i++ )
   {
     drawContours( drawing, contours_poly, (int)i, Scalar(0,255,0), 1, 8, vector<Vec4i>(), 0, Point() ); 
