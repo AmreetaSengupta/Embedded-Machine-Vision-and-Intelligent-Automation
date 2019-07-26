@@ -67,7 +67,7 @@ int main( int argc, char** argv )
 	    break;
 	     
 	    result_frame = present_frame.clone();
-        resize(result_frame,result_frame,Size(result_frame.cols*2, result_frame.rows*2));
+	    resize(result_frame,result_frame,Size(result_frame.cols*2, result_frame.rows*2));
 
         vector<Rect> found;
         vector<double> weights;
@@ -100,7 +100,7 @@ int main( int argc, char** argv )
 			syslog(LOG_INFO, "Number of Pedestrians detected = %d ", found.size());
 			for( size_t i = 0; i < found.size(); i++ )
 			{
-			  syslog(LOG_INFO, "Coordinates of Pedastrian %d: x=%d y=%d\n",i,found[i].x+found[i].width/2,found[i].y+found[i].height/2);
+				syslog(LOG_INFO, "Coordinates of Pedastrian %d: x=%d y=%d\n",i,found[i].x+found[i].width/2,found[i].y+found[i].height/2);
 			}
 		}
 
