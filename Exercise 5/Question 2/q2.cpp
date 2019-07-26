@@ -46,7 +46,7 @@ int main( int argc, char** argv )
 		log_flag =1;
 	  }
 	   
-      VideoCapture cap(src);
+	  VideoCapture cap(src);
       if(!cap.isOpened())
       {
 	    cout << "Error opening video stream or file" <<endl;
@@ -55,7 +55,7 @@ int main( int argc, char** argv )
 	  
 	  //Default Pedestrian Detection Setting
 	  HOGDescriptor hog;
-      hog.setSVMDetector(HOGDescriptor::getDefaultPeopleDetector());
+	  hog.setSVMDetector(HOGDescriptor::getDefaultPeopleDetector());
     
 	  while(1)
 	  {
@@ -96,7 +96,7 @@ int main( int argc, char** argv )
 		
 		// Log the result
 		 if(log_flag == 1)
-	    {
+		 {
 			syslog(LOG_INFO, "Number of Pedestrians detected = %d ", found.size());
 			for( size_t i = 0; i < found.size(); i++ )
 			{
