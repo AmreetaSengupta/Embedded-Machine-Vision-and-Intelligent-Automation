@@ -12,7 +12,6 @@
 #include <stdlib.h>
 #include <iostream>
 #include <syslog.h>
-#include <string.h>
 
 #include <opencv2/opencv.hpp>
 
