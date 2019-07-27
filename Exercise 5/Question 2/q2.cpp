@@ -5,7 +5,7 @@
 * Date: 07/26/2019
 * References: docs.opencv.org
 *             https://answers.opencv.org/question/179816/human-detection-and-tracking-opencv-c/
-* 			  Embedded Machine Vision and Intelligent Automation Exercise 2 by Amreeta Sengupta
+*             Embedded Machine Vision and Intelligent Automation Exercise 2 by Amreeta Sengupta
 ***********************************************************************************************************/
 
 #include <unistd.h>
