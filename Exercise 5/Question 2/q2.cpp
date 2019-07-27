@@ -33,7 +33,7 @@ int main( int argc, char** argv )
 	  string str1;
 	  const string src = argv[1];
 	  double timestamp, avg_time;
-      double max_val=0;
+	  double max_val=0;
 	  Mat present_frame, result_frame;
 	  openlog("LOG_RESULT",LOG_CONS,LOG_USER);
 	  
